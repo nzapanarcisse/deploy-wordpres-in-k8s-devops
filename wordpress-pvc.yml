@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce # on authorise un seul pod à ecrire sur le disque à la fois(à un instant donnée)
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: gp2
