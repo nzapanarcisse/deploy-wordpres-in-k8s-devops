@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mysql
+  namespace: wordpress
 spec:
   selector:
     matchLabels:
@@ -45,7 +46,7 @@ spec:
       name: mysql
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "local-path" #kubectl get storageclass
+      storageClassName: "gp2" #kubectl get storageclass
       resources:
         requests:
           storage: 5Gi

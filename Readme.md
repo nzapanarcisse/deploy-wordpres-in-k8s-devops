@@ -14,6 +14,11 @@ Ce guide vous explique comment déployer WordPress sur un cluster Kubernetes en 
 - Configuration d'un service de type ClusterIP pour exposer le pod à l'intérieur du cluster.
 - Utilisation d'un rôle Ingress pour exposer finalement notre pod à l'extérieur du cluster.
 - Utilisation de Persistent Volumes (PV) et Persistent Volume Claims (PVC) pour assurer la persistance des données du site.
+### commandes pour déployer:
+kubectl apply --kustomize .
+
+### suppression des resources
+kubectl delete --kustomize .
 
 Veuillez consulter le fichier [wordpress-deployment.yml](wordpress-deployment.yml) pour obtenir des instructions détaillées sur la mise en place de l'environnement de déploiement et les commandes nécessaires pour exécuter les déploiements.
 
