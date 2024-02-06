@@ -34,12 +34,15 @@ spec:
             secretKeyRef:
               name: app-wordpress-secret
               key: mysql_random_root_password
+        ports:
+        - containerPort: 3306
+          name: mysql
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql
   volumeClaimTemplates:
   - metadata:
-      name: persistent
+      name: mysql
     spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: "local-path" #kubectl get storageclass
